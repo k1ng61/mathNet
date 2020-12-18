@@ -30,7 +30,7 @@ F(x) = 11+e-x
 For every value of x, the sigmoid function returns a value between 0 and 1. As you look at the graph of this function, this makes sense as the range of this function is between 0 and 1 for all real values of x. 
 
 Let’s ground this idea further by implementing it in python. As seen below, we have a class called Node in which each node has an inputs, weights, and outputs array. There are also two variables for the value of the node and the bias. Inside this class, we have a function called calculate that performs the computation described earlier. In the first line of the function, it loops through the inputs and weights array and multiplies each input to its corresponding weight, and stores it into the outputs array. Then, it loops through the output array to get a sum of all the values calculated. After adding the bias, the value is taken as an input into the sigmoid function which normalizes it to be between 0 and 1.
-
+```bash
 Import math
 
 class Net:
@@ -57,7 +57,7 @@ def calculate(self):
    self.value = self.sigmoid(self.value)
 
    return self.value
-
+```
 
 Now that we have implemented the basic structure, we have to figure out how we can optimize the weights in order to fit the data because in its present state, the structure multiplies the values in the dataset to a random set of weights. In order to finish off the neural network, we have to let the network make predictions about the output and then compare it to the actual output which would allow it to fine-tune the weights and bias to make the prediction better, a process known as training. 
 
@@ -77,6 +77,7 @@ Now that we have an equation to calculate the cost, we have to fine-tune the bia
 The function J at the end of this equation represents the cost function which in this case, is the mean squared error. The greek letter a represents the learning rate which is defined as how big or small steps you’re taking per iteration of this loop in order to minimize the loss. The learning rate is important because if it’s too big, you take So, first we take the derivative of the cost function with respect to the weights/bias then after multiplying it with the learning rate, we subtract it with the current weight values. The theory behind this is that the derivative of the cost function would tell us if the weights are increasing or decreasing the loss. If the loss increases when the weights increase, the derivative will result in a positive value which would then be subtracted by the current rates, making them smaller. Logically, if increasing the weights result in a bigger loss then decreasing the weights would result in a smaller loss and vice versa. 
 Let’s put this theory into practice, look at the code below: 
 
+```bash
 def gradient_descent(self, epoch, lr):
    for epoch in range(epoch):
        prediction = self.calculate()
@@ -92,4 +93,4 @@ def gradient_descent(self, epoch, lr):
 
        for num in zdelta:
            self.bias -= lr * num
-
+```
