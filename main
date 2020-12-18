@@ -1,0 +1,47 @@
+import math
+
+
+class Node:
+    def __init__(self, inputs, outputs, weights, bias):
+        self.inputs = inputs
+        self.weights = weights
+        self.predictions = []
+        self.outputs = outputs
+        self.value = 0
+        self.bias = bias
+
+
+    def sigmoid(self, value):  # activation function
+
+        return 1 / (1 + math.exp(-value))
+
+    def calculate(self):
+        for i in range(0, len(self.inputs)):
+            self.predictions[i] = self.inputs[i] * self.weights[i]
+
+        for i in self.predictions:
+            self.value += i
+
+        self.value += self.bias
+
+        self.value = self.sigmoid(self.value)
+
+        return self.value
+
+    def gradient_descent(self, epoch, lr):
+        for epoch in range(epoch):
+            prediction = self.calculate()
+
+            # derivative of mean squared error
+            dcost = prediction - self.outputs
+            dpred = self.sigmoid(prediction) * (1 - self.sigmoid(prediction))
+
+            zdelta = dcost * dpred
+
+            for weight in self.weights:
+                weight -= lr * (self.inputs * zdelta)
+
+            for num in zdelta:
+                self.bias -= lr * num
+
+            
