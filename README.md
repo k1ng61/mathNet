@@ -1,5 +1,5 @@
 # mathNet
-Looking at the math behind neural networks to create our own structures without using libraries such as Pytorch and Tensorflow
+Libraries such as Pytorch and Tensorflow are great tools in building deep learning models but they also have a negative aspect to them. Many people skip the part of looking at the math behind deep learning alogrithms and structures. This comes in handy because to make new strides in the field of AI you have to get a good understanding of how the state of the art algorithms work and there is no better way to do to that than looking at the math equations which ecompass every aspect of AI. 
 
 ## Introduction:
 
