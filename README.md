@@ -1,9 +1,10 @@
 # mathNet
-Libraries such as Pytorch and Tensorflow are great tools in building deep learning models but they also have a negative aspect to them. Many people skip the part of looking at the math behind deep learning alogrithms and structures. This comes in handy because to make new strides in the field of AI you have to get a good understanding of how the state of the art algorithms work and there is no better way to do to that than looking at the math equations which ecompass every aspect of AI. 
+Libraries such as Pytorch and Tensorflow are essential in building deep learning models but they can also create a false illusion of understanding. Many people understand the scripts to run their models yet they lack the understanding of how they work. This is a huge problem if you are conducting research where you are trying build your own neural networks, where you can't just run scripts from popular libraries. To make new strides in the field of AI, you have to get a good understanding of how the state of the art algorithms work and there is no better way to do to that than looking at the math equations that encompass every alogirithm of AI. 
 
 ## Introduction:
+Today, we are going to be looking at what Neural networks are and then going deep into a type of neural networ known as Feed Forward Neural Networks. 
 
-# What are neural networks?
+### What are neural networks?
 
 Over the past decade, the best-performing state of the art Artificial intelligence applications have been derived from a subset of AI known as Deep Learning. From self driving cars to Neuro-Imaging, this frontier of AI has been solving problems that have never been solved before. But what exactly is Deep Learning? To answer this question we have to dive deep into a computing system known as Neural Networks.
 
